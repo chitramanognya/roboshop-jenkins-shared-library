@@ -5,7 +5,12 @@ pipeline {
     stages {
         stage('Compile/Build') {
             steps {
-                echo 'Compile/Build'
+                if(app_lang == "nodejs") {
+                    sh 'npm install'
+                }
+                if(app_lang == "maven") {
+                    sh 'mvn package'
+                }
             }
         }
         
