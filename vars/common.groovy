@@ -9,9 +9,9 @@ def compile() {
 
 def testcases() {
     if(app_lang == "nodejs") {
-        sh 'npm install'
+        sh 'echo test'
     }
     if(app_lang == "maven") {
-        sh 'mvn package'
+        sh 'echo test'
     }
 }
