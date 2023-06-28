@@ -15,3 +15,7 @@ def testcases() {
     sh 'echo OK'
  
 }
+def codequality() {
+   
+    
+}
