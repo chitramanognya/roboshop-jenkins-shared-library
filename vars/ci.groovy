@@ -8,6 +8,7 @@ pipeline {
     stages {
         stage('Compile/Build') {
             steps {
+                sh 'env'
                 script {
                 common.compile()
             }
@@ -29,7 +30,14 @@ pipeline {
             }
         }
     }
-    
-    
+ }
+
+post {
+   failure {
+       mail body: '${component} - pipeline Failed \n ${BUILD_URL}', from: 'chmanu.chinu@gmail.com', subject: '${component} - pipeline Failed', to: 'chmanu.chinu@gmail.com'
+   }  
   }
+
+
+ }
 }
